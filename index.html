@@ -1,8 +1,98 @@
-<!
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Raja 11</title>
 <style>
   :root{
      /* 🌙 Dark Mode (Midnight Blue) */
-    --m
+    --midnight-1: #041028;
+    --midnight-2: #071733;
+    --surface-dark-trans: rgba(2,8,23,0.45);
+
+    /* ☀️ Light Mode */
+    --light-bg: #ffffff;
+    --light-surface: rgba(255,255,255,0.97);
+    --light-sidebar-trans: rgba(255,255,255,0.95);
+
+    /* 🎨 Accent Colors */
+    --accent: #FF6B00;
+    --accent-2: #FF8A33;
+    --muted: #9aa9c3;
+
+    /* 📝 Text Colors */
+    --text-dark: #111111;
+    --text-light: #eaf1ff;
+    --text-muted-light: #5a5a5a;
+    --text-muted-dark: #9ab0d6;
+
+    /* 🟩🟥 Status Badges */
+    --green-rgba: rgba(46,204,113,0.75);
+    --red-rgba: rgba(231,76,60,0.75);
+    --orange-rgba: rgba(243,156,18,0.85);
+
+    /* 💠 Layout & Shadows */
+    --card-radius: 16px;
+    --card-shadow-dark: 0 6px 18px rgba(0,0,0,0.5);
+    --card-shadow-light: 0 6px 18px rgba(2,6,23,0.06);
+
+    /* ⚙️ Transition & Width */
+    --trans: 0.3s;
+    --sidebar-width: 280px;
+}
+
+/* 🪄 Tambahkan di sini: */
+body.light-mode {
+    background: var(--light-bg);
+    color: var(--text-dark);
+}
+
+body.dark-mode {
+    background: var(--midnight-1);
+    color: var(--text-light);
+}
+
+.sidebar.light-mode {
+    background: var(--light-sidebar-trans);
+    color: var(--text-dark);
+}
+
+.sidebar.dark-mode {
+    background: var(--surface-dark-trans);
+    color: var(--text-light);
+}
+
+h1, h2, h3, p, span, a {
+    transition: color var(--trans) ease;
+}
+
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;transition:background var(--trans),color var(--trans)}
+  /* ================= DEFAULT DARK THEME ================= */
+  body{background:linear-gradient(180deg,var(--midnight-1),var(--midnight-2));color:var(--text-light);overflow-x:hidden}
+  .app{max-width:1100px;margin:0 auto;padding:14px 18px 120px;position:relative;z-index:2}
+
+  /* topbar */
+  .topbar{display:flex;align-items:center;gap:12px}
+  .hamburger{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--text-light)}
+  .title{font-weight:800;font-size:18px;color:var(--text-light)}
+  .top-actions{margin-left:auto;display:flex;gap:8px;align-items:center}
+  .btn{padding:8px 12px;border-radius:10px;border:none;cursor:pointer;font-weight:700;transition:transform .12s}
+  .btn:active{transform:scale(.98)}
+  .btn-primary{background:linear-gradient(90deg,var(--accent-2),var(--accent));color:#111}
+  .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text-light)}
+
+  /* header */
+  .header-group{transition:opacity var(--trans),transform var(--trans)}
+  .banner{margin-top:12px;border-radius:14px;padding:14px;background:linear-gradient(90deg, rgba(255,111,0,0.06), rgba(255,138,51,0.04));display:flex;align-items:center;gap:12px}
+  .banner h2{margin:0;color:var(--text-light)}
+  .tabs{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+  .tab{padding:8px 12px;border-radius:20px;background:rgba(255,255,255,0.02);cursor:pointer;color:var(--muted);font-weight:700}
+  .tab.active{background:linear-gradient(90deg,var(--accent-2),var(--accent));color:#111}
+  .search-row{display:flex;gap:8px;margin-top:10px;align-items:center}
+  .search-row input, .search-row select{padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text-light)}
+
   /* grid + menu cards (dark) */
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:14px}
   .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px;border-radius:var(--card-radius);display:flex;gap:12px;align-items:center;position:relative;box-shadow:var(--card-shadow-dark);border:1px solid rgba(255,255,255,0.03)}
