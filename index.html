@@ -341,8 +341,6 @@ const fmt = n => 'Rp ' + Number(n).toLocaleString('id-ID');
 let menus = JSON.parse(localStorage.getItem(KEY_MENU) || 'null');
 if(!menus){
   menus = [
-    {id:uid(), name:'Mie Gacoan Original', price:15000, cat:'MIE', img:''},
-    {id:uid(), name:'Pangsit Goreng', price:10000, cat:'SNACK', img:''}
   ];
   localStorage.setItem(KEY_MENU, JSON.stringify(menus));
 }
